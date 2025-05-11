@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}gelolaus{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { 
+            background: #161316; 
+            font-family: Helvetica, Arial, sans-serif;
+        }
+        .navbar.is-dark { background: #161316; border-bottom: 1px solid #FFFFFC; }
+        .navbar .navbar-brand .navbar-item, .navbar .navbar-burger span { color: #FFFFFC !important; }
+        .navbar .navbar-burger { color: #FFFFFC; }
+        .page-content { padding-left: 1em; padding-right: 1em; }
+        .footer {
+            background: #161316;
+            color: #FFFFFC;
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #FFFFFC;
+            margin-top: 2rem;
+        }
+        body {
+            padding-bottom: 3rem; /* Add padding to prevent content from being hidden behind footer */
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <nav class="navbar is-dark" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand" style="width:100%;">
+            <a class="navbar-item has-text-weight-bold" style="color:#FFFFFC; font-size:1.5rem; padding-left:8em; padding-right:8em; margin-left:0;">gelolaus</a>
+            <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu" style="margin-left:auto;">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+    </nav>
+    <main class="page-content">
+        {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>This site is built using <a href="https://www.djangoproject.com/" style="color: #FFFFFC; text-decoration: underline; font-weight: bold;">Django</a>.</p>
+        </div>
+    </footer>
+</body>
+</html> 
